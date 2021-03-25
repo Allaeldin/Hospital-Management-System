@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.coding.Doctor_datenView.PatientSearchController">
+   <children>
+      <TableView fx:id="patientTableView" layoutX="14.0" layoutY="8.0" prefHeight="400.0" prefWidth="966.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <columns>
+            <TableColumn fx:id="patient_IDSearch_Column" prefWidth="70.99996948242188" text="Patient Id " />
+            <TableColumn fx:id="patient_Name_Column" prefWidth="91.99996948242188" text="Name" />
+            <TableColumn fx:id="PatientAddressSearchColumn" prefWidth="124.0" text="Address" />
+            <TableColumn fx:id="PatientContactSearchColumn" prefWidth="146.0" text="Contact" />
+            <TableColumn fx:id="PatientDiseaseSearchColumn" prefWidth="155.0" text="Disease" />
+            <TableColumn fx:id="roomTypeSearchColumn" prefWidth="133.0" text="Room Type" />
+            <TableColumn fx:id="roomNumberSearchColumn" prefWidth="134.0" text="Room Number" />
+            <TableColumn fx:id="dateSearchColumn" prefWidth="134.0" text="Date" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

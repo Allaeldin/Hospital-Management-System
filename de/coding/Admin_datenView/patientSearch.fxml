@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.coding.Admin_datenView.PatientController">
+   <children>
+      <TableView fx:id="patientTableView" layoutX="14.0" layoutY="8.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="patient_ID_Column" prefWidth="70.99996948242188" text="Patient Id " />
+          <TableColumn fx:id="patient_Name_Column" prefWidth="91.99996948242188" text="Name" />
+            <TableColumn fx:id="PAtientAddressColumn" prefWidth="124.0" text="Address" />
+            <TableColumn fx:id="PatientcontactColumn" prefWidth="146.0" text="Contact" />
+            <TableColumn fx:id="PatientDiseaseColumn" prefWidth="155.0" text="Disease" />
+            <TableColumn fx:id="doctor_ID_Column" prefWidth="104.0" text="Doctor id" />
+            <TableColumn fx:id="doctorSpecialistColumn" prefWidth="149.0" text="Specialist" />
+            <TableColumn fx:id="roomTypeColumn" prefWidth="133.0" text="Room Type" />
+            <TableColumn fx:id="roomNumberColumn" prefWidth="134.0" text="Room Number" />
+            <TableColumn fx:id="dateColumn" prefWidth="134.0" text="Date" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

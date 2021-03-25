@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="1275.0" style="-fx-background-color: #24E2EE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.coding.Admin_datenView.Controller_AdminDatenView">
+   <children>
+      <TabPane layoutX="178.0" layoutY="214.0" prefHeight="553.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <tabs>
+          <Tab text="Add Doctor">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: White;">
+                     <children>
+                        <HBox layoutX="-1.0" layoutY="-3.0" prefHeight="522.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="522.0" prefWidth="255.0" spacing="15.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="41.0" prefWidth="255.0" text="Doctor ID" />
+                                    <Label alignment="CENTER" prefHeight="34.0" prefWidth="255.0" text="Doctor Name" />
+                                    <Label alignment="CENTER" prefHeight="29.0" prefWidth="255.0" text="Address" />
+                                    <Label alignment="CENTER" prefHeight="32.0" prefWidth="255.0" text="Email-ID" />
+                                    <Label alignment="CENTER" prefHeight="33.0" prefWidth="255.0" text="Contact No" />
+                                    <Label alignment="CENTER" prefHeight="36.0" prefWidth="255.0" text="Specialist in" />
+                                    <Label alignment="CENTER" prefHeight="32.0" prefWidth="255.0" text="Salary" />
+                                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="255.0" text="Passwort" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="50.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="522.0" prefWidth="309.0" spacing="23.0">
+                                 <children>
+                                    <TextField fx:id="doctorIDTextfield" />
+                                    <TextField fx:id="doctorName" />
+                                    <TextField fx:id="address" />
+                                    <TextField fx:id="email" />
+                                    <TextField fx:id="contact" />
+                                    <TextField fx:id="specialist" />
+                                    <TextField fx:id="salary" />
+                                    <TextField fx:id="passwort" />
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                                       <children>
+                                          <Button alignment="CENTER" mnemonicParsing="false" onAction="#submitButtonAction" prefHeight="27.0" prefWidth="90.0" text="Submit" />
+                                          <Button mnemonicParsing="false" onAction="#clearAllFielder" prefHeight="27.0" prefWidth="90.0" text="Cancel" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets top="50.0" />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets top="2.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Delete Doctor">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="docDeleteTextfiled" layoutX="335.0" layoutY="154.0" promptText="ID" />
+                        <Button fx:id="docDeleteButton" layoutX="380.0" layoutY="233.0" mnemonicParsing="false" onAction="#docDeleteActionButton" prefHeight="27.0" prefWidth="77.0" text="Delete" />
+                        <Label layoutX="199.0" layoutY="153.0" prefHeight="30.0" prefWidth="95.0" text="Doctor ID" />
+                        <Label alignment="CENTER" layoutX="311.0" layoutY="30.0" prefHeight="50.0" prefWidth="212.0" text="Doctor Delete">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Line endX="100.0" layoutX="417.0" layoutY="80.0" startX="-100.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="Update Doctor Details">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="149.0" prefWidth="336.0" style="-fx-background-color: White;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="412.0" layoutY="14.0" prefHeight="49.0" prefWidth="218.0" text="Update Doctor details">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="67.0" prefHeight="37.0" prefWidth="74.0" text="Doctor ID:" />
+                        <TableView fx:id="doctorTableView" layoutX="-1.0" layoutY="348.0" prefHeight="72.0" prefWidth="1101.0">
+                          <columns>
+                            <TableColumn fx:id="idColumn" prefWidth="75.0" text="Doctor ID" />
+                            <TableColumn fx:id="nameColumn" prefWidth="127.0" text="Doctor name" />
+                              <TableColumn fx:id="addressColumn" prefWidth="151.0" text="Address" />
+                              <TableColumn fx:id="emailColumn" prefWidth="231.0" text="Email" />
+                              <TableColumn fx:id="contactColumn" prefWidth="179.0" text="Contact" />
+                              <TableColumn fx:id="specialistColumn" prefWidth="179.0" text="Specialist" />
+                              <TableColumn fx:id="salaryColumn" prefWidth="138.0" text="Salary" />
+                          </columns>
+                        </TableView>
+                        <HBox layoutX="-1.0" layoutY="273.0" prefHeight="102.0" prefWidth="1094.0" style="-fx-background-color: #24E2EE;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-14.0" />
+                        <Button fx:id="searchButton" layoutX="114.0" layoutY="127.0" mnemonicParsing="false" onAction="#searchbuttonAction" prefHeight="30.0" prefWidth="70.0" text="Search" />
+                        <Button fx:id="editButton" layoutX="562.0" layoutY="305.0" mnemonicParsing="false" onAction="#docEditAction" prefHeight="30.0" prefWidth="103.0" text="Edit" />
+                        <VBox layoutX="362.0" layoutY="72.0" prefHeight="186.0" prefWidth="376.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="nameTextfiled" />
+                              <TextField fx:id="addressTextfield" />
+                              <TextField fx:id="emailTextfield" />
+                              <TextField fx:id="contactTextfield" />
+                              <TextField fx:id="specialistTextfield" />
+                              <TextField fx:id="salarytextfield" />
+                           </children>
+                        </VBox>
+                        <TextField fx:id="idSearchTextField" layoutX="102.0" layoutY="72.0" prefHeight="27.0" prefWidth="112.0" promptText="ID" />
+                        <VBox layoutX="243.0" layoutY="72.0" prefHeight="218.0" prefWidth="100.0" spacing="9.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="27.0" prefWidth="100.0" text="Name" />
+                              <Label alignment="CENTER" prefHeight="27.0" prefWidth="100.0" text="Address" />
+                              <Label alignment="CENTER" prefHeight="27.0" prefWidth="100.0" text="Email" />
+                              <Label alignment="CENTER" prefHeight="27.0" prefWidth="100.0" text="Contact no" />
+                              <Label alignment="CENTER" prefHeight="27.0" prefWidth="100.0" text="Specialist In" />
+                              <Label alignment="CENTER" prefHeight="27.0" prefWidth="100.0" text="Salary" />
+                           </children>
+                        </VBox>
+                        <Button layoutX="405.0" layoutY="305.0" mnemonicParsing="false" onAction="#clearAllFielder" prefHeight="30.0" prefWidth="103.0" text="Cancel" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Add Patient">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="279.0" layoutY="89.0" prefHeight="285.0" prefWidth="312.0" spacing="15.0">
+                           <children>
+                              <TextField fx:id="patientID" prefHeight="0.0" prefWidth="312.0" />
+                              <TextField fx:id="patientName" />
+                              <TextField fx:id="patientAddress" />
+                              <TextField fx:id="patientContact" />
+                              <TextField fx:id="patientDisease" />
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                                 <children>
+                                    <Button fx:id="addPatientButton" mnemonicParsing="false" onAction="#addPatientAction" prefHeight="27.0" prefWidth="90.0" text="Add" />
+                                    <Button mnemonicParsing="false" onAction="#clearAllFielder" prefHeight="27.0" prefWidth="90.0" text="Cancel" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Label alignment="CENTER" layoutX="279.0" layoutY="26.0" prefHeight="46.0" prefWidth="265.0" text="Add Patient" textFill="#fff7f7">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="CENTER" layoutX="150.0" layoutY="89.0" prefHeight="195.0" prefWidth="100.0" spacing="15.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="28.0" prefWidth="100.0" text="Patient ID" />
+                              <Label alignment="CENTER" prefHeight="28.0" prefWidth="100.0" text="Name" />
+                              <Label alignment="CENTER" prefHeight="28.0" prefWidth="100.0" text="Address" />
+                              <Label alignment="CENTER" prefHeight="28.0" prefWidth="100.0" text="Contact No" />
+                              <Label alignment="CENTER" prefHeight="28.0" prefWidth="100.0" text="Disease" />
+                           </children>
+                           <opaqueInsets>
+                              <Insets left="10.0" />
+                           </opaqueInsets>
+                        </VBox>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Assign Bed  to the Patient ">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="297.0" layoutY="88.0" prefHeight="316.0" prefWidth="135.0" spacing="20.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="38.0" prefWidth="135.0" text="Name" />
+                              <Label alignment="CENTER" prefHeight="38.0" prefWidth="135.0" text="Address" />
+                              <Label alignment="CENTER" prefHeight="38.0" prefWidth="135.0" text="Contact No" />
+                              <Label alignment="CENTER" prefHeight="38.0" prefWidth="135.0" text="Disease" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="715.0" layoutY="97.0" prefHeight="262.0" prefWidth="342.0" spacing="30.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="39.0" prefWidth="253.0">
+                                 <children>
+                                    <Label prefHeight="38.0" prefWidth="78.0" text="Doctor ID:" />
+                                    <ChoiceBox fx:id="choiceBoxDoctorID" onMouseClicked="#choiceBoxDoctorIDAction" prefHeight="27.0" prefWidth="166.0" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="39.0" prefWidth="253.0" spacing="5.0">
+                                 <children>
+                                    <Label prefHeight="38.0" prefWidth="82.0" text="Specialist in:" />
+                                    <TextField fx:id="doctorSpecialistAssignBed" prefHeight="27.0" prefWidth="166.0" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="39.0" prefWidth="253.0">
+                                 <children>
+                                    <Label prefHeight="38.0" prefWidth="91.0" text="Date:">
+                                       <padding>
+                                          <Insets left="26.0" />
+                                       </padding>
+                                    </Label>
+                                    <DatePicker fx:id="date" onAction="#showDate" prefHeight="27.0" prefWidth="176.0">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </DatePicker>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="39.0" prefWidth="253.0" spacing="5.0">
+                                 <children>
+                                    <Label prefHeight="38.0" prefWidth="91.0" text="Room Type:" />
+                                    <ChoiceBox fx:id="ChoiceBoxRoomType" prefHeight="27.0" prefWidth="178.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="432.0" layoutY="101.0" prefHeight="255.0" prefWidth="204.0" spacing="30.0">
+                           <children>
+                              <TextField fx:id="patientNameAssignTextfield" />
+                              <TextField fx:id="patientAddressAssignTextfield" />
+                              <TextField fx:id="patientContactAssignTextfield" />
+                              <TextField fx:id="patientDiseaseAssignTextfield" />
+                           </children>
+                        </VBox>
+                        <Label alignment="CENTER" layoutX="8.0" layoutY="31.0" prefHeight="35.0" prefWidth="78.0" text="Patient ID:" />
+                        <TextField fx:id="searchAssignTextfield" layoutX="89.0" layoutY="35.0" prefHeight="27.0" prefWidth="174.0" />
+                        <HBox layoutY="412.0" prefHeight="100.0" prefWidth="452.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <Button fx:id="searchAssignButton" layoutX="78.0" layoutY="84.0" mnemonicParsing="false" onAction="#searchButtonAssignBed" prefHeight="27.0" prefWidth="89.0" text="Search" />
+                        <Separator layoutX="653.0" layoutY="83.0" orientation="VERTICAL" prefHeight="325.0" prefWidth="3.0" />
+                        <Label alignment="CENTER" layoutX="410.0" layoutY="16.0" prefHeight="39.0" prefWidth="226.0" text="Assign Bed to the Patient">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Line endX="100.0" layoutX="523.0" layoutY="62.0" startX="-100.0" />
+                        <Button fx:id="assignBedButton" layoutX="183.0" layoutY="84.0" mnemonicParsing="false" onAction="#assignBedActionButton" prefHeight="27.0" prefWidth="89.0" text="Assign Bed" />
+                        <Button fx:id="cancelAssignBedButton" layoutX="126.0" layoutY="142.0" mnemonicParsing="false" onAction="#clearAllFielder" prefHeight="27.0" prefWidth="95.0" text="Cancel" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="View All Patient">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="patientTableView" layoutX="202.0" layoutY="14.0" prefHeight="521.0" prefWidth="877.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="patient_ID_Column" prefWidth="67.0" text="Patient ID" />
+                            <TableColumn fx:id="patient_Name_Column" prefWidth="83.0" text="Name" />
+                              <TableColumn fx:id="PAtientAddressColumn" prefWidth="103.0" text="Address" />
+                              <TableColumn fx:id="PatientcontactColumn" prefWidth="118.0" text="Contact" />
+                              <TableColumn fx:id="PatientDiseaseColumn" prefWidth="118.0" text="Disease" />
+                              <TableColumn fx:id="doctor_ID_Column" prefWidth="83.0" text="Doctor ID" />
+                              <TableColumn fx:id="doctorSpecialistColumn" prefWidth="124.0" text="Specialist" />
+                              <TableColumn fx:id="roomTypeColumn" prefWidth="115.0" text="Room Type" />
+                              <TableColumn fx:id="roomNumberColumn" prefWidth="133.0" text="Room Number" />
+                              <TableColumn fx:id="dateColumn" prefWidth="128.0" text="Date" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="patientSearchID_Textfield" layoutX="73.0" layoutY="92.0" prefHeight="27.0" prefWidth="126.0" AnchorPane.topAnchor="92.0" />
+                        <Label layoutX="6.0" layoutY="90.0" prefHeight="32.0" prefWidth="60.0" text="Patient ID" />
+                        <Button fx:id="patientSearchButton" layoutX="14.0" layoutY="147.0" mnemonicParsing="false" onAction="#patientSearchButtonAction" prefHeight="27.0" prefWidth="81.0" text="Search" />
+                        <Button fx:id="loadButton" layoutX="117.0" layoutY="147.0" mnemonicParsing="false" onAction="#loadAllPatient" prefHeight="27.0" prefWidth="81.0" text="Load All" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label alignment="CENTER" prefHeight="146.0" prefWidth="1079.0" text="Hospital Mangement System" textFill="#fffafa" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
